@@ -37,7 +37,7 @@ const EventCard = ({eventDetail}) => {
                                     <img src={locationGif} className="h-5 w-5"/>
                                  
                                     <p className="ml-1 text-left text-sm mb-4">
-                                        {eventDetail?.venue?.name},{eventDetail?.venue?.city},{eventDetail?.venue?.country}
+                                        {eventDetail?.venue?.name}, {eventDetail?.venue?.city}, {eventDetail?.venue?.country}
                                     </p>
                                 </div>
                                 <div className="flex  justify-center">
