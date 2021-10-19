@@ -1,8 +1,10 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import './ProfileCard.scss';
 
 const ProfileCard = ({user,artist,onArtistSelect}) => {
-
+    useEffect(() => {
+        localStorage.setItem('artist',JSON.stringify(user));
+    }, [user]);
     if(user){
         return(
             <div data-testid={'user-'+user.name} className={'card cursor-pointer ' + (user?.name === artist?.name?'focus-card':'')} onClick={(e)=>onArtistSelect(e,user)}>

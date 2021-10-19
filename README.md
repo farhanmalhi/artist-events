@@ -12,12 +12,13 @@ It is a take-home assignment.
 2. Search Artist By Name.
 3. Select Artist.
 4. Events Listing.
-5. Test Cases using JEST and RTL.
-6. Events searching by Title, Description, Venu, City, Country.
-7. Events filtering by Start Date and End Date.
-8. Dynamic Event count text.
-9. State Management using Redux toolkit.
-10. Responsive UI.
+5. Persist the last entered artist and events across browser reloads/refreshes
+6. Test Cases using JEST and RTL.
+7. Events searching by Title, Description, Venue, City, Country.
+8. Events filtering by Start Date and End Date.
+9. Dynamic Event count text.
+10. State Management using Redux toolkit.
+
 
 ## Installation
 Use the package manager [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm/) to run the project.

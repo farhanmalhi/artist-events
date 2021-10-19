@@ -42,10 +42,10 @@ export const getEvents = createAsyncThunk(
 export const dashboardSlice = createSlice({
     name: 'dashboard',
     initialState: {
-        userData:{},
+        userData:JSON.parse(localStorage.getItem('artist')),
         userIsFetching:false,
         userSuccess:false,
-        eventsData:[],
+        eventsData:JSON.parse(localStorage.getItem('eventsData')),
         eventsIsFetching:false,
         eventsSuccess:false,
         isError:false,
@@ -62,6 +62,10 @@ export const dashboardSlice = createSlice({
         },
         setUserFetching: (state) => {
             state.userIsFetching = true;
+            return state;
+        },
+        setPreviousState: (state,{payload}) => {
+            console.log('Payload',payload);
             return state;
         },
     },
@@ -96,6 +100,6 @@ export const dashboardSlice = createSlice({
     },
 });
 
-export const { clearState,setUserFetching } = dashboardSlice.actions;
+export const { clearState,setUserFetching,setPreviousState } = dashboardSlice.actions;
 
 export const DashboardSelector = (state) => state;

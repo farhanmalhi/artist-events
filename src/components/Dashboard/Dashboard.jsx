@@ -1,4 +1,4 @@
-import React, {  useRef,useState } from 'react';
+import React, {  useRef,useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import {debounce} from 'lodash';
 import './Dashboard.scss';
@@ -19,11 +19,19 @@ const Dashboard = () => {
     
     const sendQuery = (query) => { dispatch(getUser(query)); 
     };
-
+    useEffect(() => {
+        setSearch( localStorage.getItem('artistSearch'));
+        setArtist( JSON.parse(localStorage.getItem('artist')));
+        
+        // dispatch(setPreviousState({user:JSON.parse(localStorage.getItem('artist')),events:JSON.parse(localStorage.getItem('eventsData'))}));
+    }, []);
     
     const delayedQuery = useRef(debounce(q => sendQuery(q), 500)).current;
     const handleSearch=(e)=>{
         e.preventDefault();
+        console.log('artistSearch');
+        localStorage.setItem('artistSearch',e.target.value);
+        
         if(e.target.value.length===0){
             reset();
         }else{

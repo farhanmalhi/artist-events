@@ -19,6 +19,7 @@ const EventsPage = ({parentSearch}) => {
     const {  userData,eventsData,eventsIsFetching } = useSelector(state=>state.dashboard);
     const startDateHandler=(e)=>{
         e.preventDefault();
+        localStorage.setItem('startDate',format( new Date(e.target.value),'yyyy-MM-dd'));
         setStartDate(format(new Date(e.target.value),'yyyy-MM-dd'));
         if(endDate){
             dispatch(getEvents([userData.name,format(new Date(e.target.value),'yyyy-MM-dd'),endDate]));
@@ -27,7 +28,12 @@ const EventsPage = ({parentSearch}) => {
         }   
     };
     useEffect(() => {
-        if(parentSearch.length===0){
+        setEndDate( format( new Date(localStorage.getItem('endDate')),'yyyy-MM-dd'));
+        setStartDate(format(new Date(localStorage.getItem('startDate')),'yyyy-MM-dd'));
+        setEventSearch(localStorage.getItem('eventSearch'));
+    }, []);
+    useEffect(() => {
+        if(localStorage.getItem('artistSearch')===0){
             setStartDate('');
             setEndDate('');
             setEventSearch('');
@@ -35,15 +41,20 @@ const EventsPage = ({parentSearch}) => {
     }, [parentSearch]);
     const handleEventSearch= (e)=>{
         e.preventDefault();
+        localStorage.setItem('eventSearch',e.target.value);
         if(e.target.value){
             setEventSearch(e.target.value);
         }else{
             setEventSearch('');
         }
     };
+    useEffect(() => {
+        localStorage.setItem('eventsData',JSON.stringify(eventsData));
+
+    }, [eventsData]);
     const endDateHandler=(e)=>{
         e.preventDefault();
-        
+        localStorage.setItem('endDate',format( new Date(e.target.value),'yyyy-MM-dd'));
         if(startDate.length>0){
             setEndDate( format( new Date(e.target.value),'yyyy-MM-dd'));
             dispatch(getEvents([userData.name,startDate,format( new Date(e.target.value),'yyyy-MM-dd')]));    
