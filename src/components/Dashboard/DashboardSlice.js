@@ -8,7 +8,6 @@ export const getUser = createAsyncThunk('/artists', async (artistName) => {
     artistName = artistName.replace(/"/g, '%27C');
 
     const response = await axios.get(`/artists/${artistName}?app_id=foo`);
-    console.log('res', response);
     return response.data;
 });
 
@@ -59,10 +58,6 @@ export const dashboardSlice = createSlice({
             state.userIsFetching = true;
             return state;
         },
-        setPreviousState: (state, { payload }) => {
-            console.log('Payload', payload);
-            return state;
-        },
     },
     extraReducers: {
         [getUser.fulfilled]: (state, { payload }) => {
@@ -95,7 +90,7 @@ export const dashboardSlice = createSlice({
     },
 });
 
-export const { clearState, setUserFetching, setPreviousState } =
+export const { clearState, setUserFetching } =
   dashboardSlice.actions;
 
 export const DashboardSelector = (state) => state;

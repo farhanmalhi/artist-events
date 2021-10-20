@@ -31,8 +31,6 @@ const Dashboard = () => {
                 : ''
         );
         setArtist(JSON.parse(localStorage.getItem('selectedArtist')));
-
-    // dispatch(setPreviousState({user:JSON.parse(localStorage.getItem('artist')),events:JSON.parse(localStorage.getItem('eventsData'))}));
     }, []);
 
     const delayedQuery = useRef(debounce((q) => sendQuery(q), 500)).current;

@@ -7,9 +7,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 if (process.env.NODE_ENV==='production') {
     axios.defaults.baseURL = window.location.origin;    
 } else {
-    console.log('process.env',process.env);
     axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
-
 }
 
 function App() {
