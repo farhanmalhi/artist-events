@@ -1,11 +1,6 @@
-# Assignment
+# Artist-Events
 
-It is a take-home assignment.
-
-### Libraries Used
--  [React/Redux Toolkit](https://redux-toolkit.js.org/)
--  [React Hook Form](https://react-hook-form.com/)
--  [Tailwind CSS](https://tailwindcss.com/)
+It is a take-home assignment. Having following features.
 
 ## Features
 1. Animated Search bar.
@@ -19,6 +14,10 @@ It is a take-home assignment.
 9. Dynamic Event count text.
 10. State Management using Redux toolkit.
 
+### Libraries Used
+-  [React/Redux Toolkit](https://redux-toolkit.js.org/)
+-  [React Hook Form](https://react-hook-form.com/)
+-  [Tailwind CSS](https://tailwindcss.com/)
 
 ## Installation
 Use the package manager [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm/) to run the project.
@@ -47,8 +46,4 @@ npm run build
 ```
 
 
-## Contribution
-This project is created by [Farhan Malhi](https://www.linkedin.com/in/farhan-malhi-396106157/).
-
-
-
+## Thanks
