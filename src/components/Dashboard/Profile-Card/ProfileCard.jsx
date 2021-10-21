@@ -30,9 +30,9 @@ const ProfileCard = ({ user, artist, onArtistSelect,userIsFetching }) => {
                     <div className="profile-info">
                         {userIsFetching?<div className="title br animate-pulse flex bg-gray-500"></div>:
                      
-                            <h1 className="text-left">
+                            <h4 className="text-left">
                                 <strong>{user ? user.name : ''}</strong>
-                            </h1>}
+                            </h4>}
                         {userIsFetching?<div className="description br animate-pulse bg-gray-400"></div>:
                    
                             <a

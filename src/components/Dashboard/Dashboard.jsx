@@ -68,7 +68,7 @@ const Dashboard = () => {
             <div className="w-8/12 mx-auto relative h-screen flex flex-col justify-start artist">
                 <div
                     className={
-                        'relative flex top-96 transfrom w-full transition duration-500 ease-in-out input-style ' +
+                        'relative flex top-96 w-full transition duration-500 ease-in-out input-style ' +
             (search?.length > 0 ? 'move translate-y-80' : 'translate-x-0')
                     }
                 >
